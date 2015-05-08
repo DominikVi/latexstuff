@@ -26,16 +26,13 @@ In this article we're going to have a closer look at the upcoming JavaScript lan
 After making clear 
 
 \section{Results:}
-Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text
 
 \section{Availability:}
-Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text
 
 \section{Contact:} \href{name@bio.com}{name@bio.com}
 \end{abstract}
 
-\section{ECMA Script 6}
-\subsection{What is ECMA Script 6}
+\subsection{What is ECMA Script}
 \subsubsection{ECMA International}
 ECMA International is a not-for-profit association in Geneva. Their target is
 to develop and publicate standads and technical reports for information and
@@ -84,16 +81,24 @@ To build ECMAScript 6 applications while the standard is still in a draft state,
 After writing the App the ECMAScript Version 6 source files will be translated into ECMAScript 5.1. while the 
 used HTML and CSS files as well as the included libraries will be copied. After the translation into ECMAScript 5.1
 the project can be run with RequireJS modules and Sourcemaps %TODO 
+%first translate in a build step
 %bild build process
 \subsubsection{Libraries and Technologies}
+The used technologies in the app include the Bower package manager, which was used to mange client side libraries. The task runner gulp automated the build system.
+For the sake of testing http-server was used to serve static files. The RequireJS Module system handles asynchronous loading of javascript. The Loadash utility library
+provides fuctions for working with lists (e.g. map, filter, last). Finally the Babel compiler compiles ECMAScript 6 into ECMAScript 5, which is understood by all modern browsers.
+This specific compiler accepts a flag which causes the compiler to translate modules to RequireJS syntax.
 \subsubsection{Application Strucutre}
-\subsubsection{Project Structure}
+\subsubsection{Project Structure} 
+The app folder contains the nescessary HTML, CSS and JavaScript (ECMAScript6) code. The application entry point is the 
 
 \section{ECMA Script language features}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% kommt noch
+\subsection{Code Organization}
+%%% kommt noch
 
 
-\section{Approach}
 
 \section{Discussion}
 As it's possible to extend existing projects with ECMAScript 6 code, the question comes up if a mixture of known concepts like the Module Pattern 
