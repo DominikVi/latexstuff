@@ -61,60 +61,65 @@ Almost every Web Developer has heard about this wide spread Language and came to
 As time passes by, the use of JavaScript in practice has shown it's benefits and weaknesses.
 That makes it important to stay up to date with the current and upcoming language standards for this very potent programming language.  
 In this article we're going to have a closer look at the upcoming JavaScript language standard which is ECMAScript Version 6.
-After making clear 
+After giving some background information about ECMAScript the web app the authores developed for the Seminar "Javascripting Technology" follows. 
+An architectural overview over the applicaton \textit{"ESnake6"} will be given before notable ECMAScript 6 language features will be presented
+and explained. 
 
 \section{Contact:} \href{name@bio.com}{name@bio.com}
 \end{abstract}
 \section{Introduction}
 \subsection{ECMAScript \& JavaScript}
-ECMAScript is the language specification for JavaScript standartized by ECMA International. The corresponding standard is ECMA-262 specification. As ECMAScript is also standartized
-by the International Organization for Standardization (ISO) in collaboration with the International Electrotechnical Commission (IEC) the corresponding standard is ISO/IEC 16262.
-As JavaScript provides additional features than the ones specified in the ECMAScript language standard it can be seen as a ECMAScript variant. Another popular variant of ECMAScript is JScript.
+ECMAScript is the language specification for JavaScript, standartized by ECMA International. The corresponding standard is the ECMA-262 specification. 
+As ECMAScript is also standartized by the International Organization for Standardization (ISO) in collaboration with the International Electrotechnical Commission (IEC) a ISO/IEC 16262 exists.
+As JavaScript provides additional features than the ones specified in the ECMAScript language standard it can be considered as an ECMAScript variant. Another popular variant of ECMAScript is JScript.
 \subsubsection{ECMA International}
-ECMA International is a not-for-profit association in Geneva. 
-Their target is to develop and publicate standads and technical reports for information- and
+ECMA International is a not-for-profit association in Geneva, Switzerland. 
+Their target is to develop and publicate standards and technical reports for information- and
 communication technology as well as consumer electronics. 
 %quelle: http://www.ecma-international.org/activities/General/presentingecma.pdf
 \subsubsection{Next standard for JavaScript}
 The current standard for JavaScript is ECMAScript 5.1, released in 2011. 
 ECMAScript 6 will be the follow-up standard for the JavaScript programming language.
 Browser vendors can use it as an orientation for their own JavaScript implementations.
+Currently there's no official Browser version that suporrts ECMAScript 6, but with the 
+help of ECMAScript Version 6 to Version 5 compilers it can already be used.
 
 \subsection{History}
 In 1996 Netscape submitted JavaScript to ECMA International for standartization.
 \subsubsection*{\textbf{ES1 - 1997}}
-First ECMAScript standard released by ECMA International, named ECMAScript Version 1.
+The first ECMAScript standard was released by ECMA International, named ECMAScript Version 1.
 \subsubsection*{\textbf{ES2 - 1998}}
 One year after the release of ECMAScript Version 1, editorial changes were made to align ECMAScript with the ISO/IEC international standard 16262.
 \subsubsection*{\textbf{ES3 - 1999}}
 Modern language features were added in ECMAScript Version 3. Some examples are regular expression support or exception handling with try/catch.
-\subsubsection*{\textbf{ES4 - (---)}}After the first set of changes made in ECMAScript Version 3, some members of ECMA International planned a set of breaking changes for Version 4, after a huge discussion about backwards compatibility Version 4 was finally abandoned. 
+\subsubsection*{\textbf{ES4 - (---)}}After the first set of changes made in ECMAScript Version 3, some members of ECMA International planned a set of breaking changes for Version 4, but there were a lot of disagreements and discussion about backwards compatibility and as no compromise was found, Version 4 was finally abandoned. 
 \subsubsection*{\textbf{ES5 - 2009}}
-After endless debates and discussion, the plan for breaking changes was temporarily freezed and reduced to the clarification of JavaScript ambiguities with the introduction of the strict mode.
+After endless debates and discussion, the plan for breaking changes was temporarily freezed and reduced to the clarification of JavaScript ambiguities with the introduction of the strict mode. 
 \subsubsection*{\textbf{ES5.1 - 2011}}
 A second set of editorial changes in ECMAScript History were made to align it again with theISO/IEC standard 16262.
 \subsubsection*{\textbf{ES6 - 2015}}
-ECMAScript 6 (aka JS Harmony) is scheduled for june 2015. It will be the most extensive standard since ECMA Script Version 1 was released. Due to the fact, that ES6 just adds syntax features on top of ESCMAScript 5.1 the backward compatibility is guaranteed. The major changes made in ES6 also work as a foundation for the following features planned for ES7.
+ECMAScript 6 (aka JS Harmony) is scheduled for june 2015. It will be the most extensive standard since ECMA Script Version 1 was released. Due to the fact, that ES6 just adds syntactical features on top of ESCMAScript 5.1 the backward compatibility is guaranteed. The changes made in ES6 also work as a foundation for the following features planned for ES7.
 \subsubsection*{\textbf{ES7 - (tbd)}}
-In May 2015 ECMAScript Version 7 is in a very early draft state, but already planned. 
+In May 2015 ECMAScript Version 7 is in a very early draft state, but already planned and includes among other things the features that were planned for ECMAScript 6 but
+din't make it into this standard before it reached the final draft state. 
 
 \subsection{Benefits of ECMAScript6}
 \subsubsection{Suitable for large code bases}
 The new ECMAScript Version 6 provides modules an classes which makes the prior used patterns (e.g. module pattern) obsolete
 and allows better encapsulation. Along with other new features this gives the possibility for clean easily readable code, 
-which makes ES6 suitable for bigger projects.
+which makes ECMAScript6 a good choice for bigger projects.
 Thanks to the syntax improvements the boilerplate can be reduced which also leads to less lines of code,
 reduced maintenance effort and easier extensibility, if used properly.
-\subsubsection{Straight forward migration of existing code}
+\subsubsection{Straight forward migration into existing code}
 As ECMAScript 6 only adds features on top of ECMAScript 5.1 the migration in existing projects is very easy,
-because there's no nescessarity to rewrite existing code to make it fit the actual standard.  
+because there's no nescessarity to rewrite existing code to make it fit the current standard.  
 
 \section{Web App}
 
 \subsection{ESnake6}
-To demonstrate the basics as well as advanced concepts of the ECMAScript 6 standard we created a modified version of the 
-popular snake game.  
-
+To demonstrate the basics as well as advanced concepts of the ECMAScript 6 programming language, we created a modified multiplayer version of the 
+popular snake game. 
+ 
 \begin{figure}[!tpb]%figure351
 \centerline{\includegraphics[scale=0.35]{esnake.jpg}}
 \caption{ECMAScript 6 web app: \textit{ESnake6}}\label{fig:03}
@@ -157,17 +162,18 @@ The app folder contains the nescessary HTML, CSS and JavaScript (ECMAScript6) co
 \subsection{Language basics}
 
 \subsubsection{Const \& Let}
-A simple new and useful features is the "'const"' keyword, which makes a variable to a constant, which means, 
+A simple new and useful feature is the "const" keyword, which makes a variable to a constant, which means, 
 that it can only be assigned once. The assignement of a second value will fail silently but can be reognized by
-Javascript linters.
+Javascript linters. The usage is similar to the usage of var and constants can be defined anywhere a variable can be defined.
+The naming must differ from functions and names in the same scope. 
 \begin{lstlisting}[caption= My Javascript Example]
 const myConst = 4;
  myConst =2; // will fail silently
 \end{lstlisting}
 
-The new "'let"' keyword is meant to be a replacement for the currently used "'var"', which defines variables 
+The new "'let"' keyword is meant to be a replacement for the currently used "var", which defines variables 
 either globally or in context of the whole codeblock, ignoring block scopes. As it may lead to unexpected behaviour
-it's a source for nasty bugs, which is meant to be eliminated with "'let"'. The new keyword declares variable in 
+it's a source for nasty bugs, which is meant to be eliminated with "let". The new keyword declares variable in 
 regard of block scope. Which means that the variable scope expires after leaving the code block it was declared in.
 
 %TODO code example
@@ -300,7 +306,69 @@ A very important part of the new ECMAScript 6 standard is the enhanced code orga
 in ECMAScript 5.1 but require patterns to simulate them, which produces a lot of boilerplate, which makes it more difficult to organize bigger code bases
 without the help of additional tools or libraries.
 \subsubsection{Modules (Import \& Export)}
-%todo
+The Module System allows the import and export of functions, variables and whole modules itself. Syntactically "export" is used for exporting and "import... from"
+for importing. An example can be found in Listing 11 where the function "getRandomInt" in the file "utils.js" gets exported, and imported in "Grid.js".
+A native Module system makes the use of the "module pattern" obsolete which makes the use of modules again cleaner.
+
+\begin{lstlisting}[caption= My Javascript Example]
+// utils.js
+export function getRandomInt(min, max) { … }
+
+// classes/Grid.js
+import { getRandomInt } from '../utils';
+getRandomCell() {
+  return {
+    x: getRandomInt(0, this.cellsX - 1),
+    y: getRandomInt(0, this.cellsY - 1)
+  };
+}
+\end{lstlisting}
+
+\subsubsection{Classes}
+ECMAScript 6 classes are "syntactical sugar" over the objects and prototypes which are currently used in ECMAScript 5.1. 
+Listing 12 shows the basic structure of classes in ECMAScript 6. The instantiation of new objects uses the "new" operator.
+
+\begin{lstlisting}[caption= My Javascript Example]
+// classes/Food.js
+export default class Food {
+  constructor(game, grid, color, respawnInterval = 5000) {
+    this.game = game;
+    this.grid = grid;
+    ...
+  }
+
+  resetRespawn() { ... }
+  respawn() { ... }
+  static myStaticMethod() { ... }
+}
+
+// Game.js
+this.food = new Food(this, this.grid, 'green', 8000);
+\end{lstlisting}
+
+\subsubsection{Inheritance}
+ECMAScript 6 classes create the same prototype chains known from previous versions of JavaScript, but with a much cleaner syntax. 
+The keyword "extends" is used to inherit from the super class.
+
+\begin{lstlisting}[caption= My Javascript Example]
+export default class FoodRandom extends Food {
+  constructor(game, grid, color, respawnProbability, respawnInterval = 5000) {
+    super(game, grid, color, respawnInterval);
+    this.respawnProbability = respawnProbability;
+  }
+
+  respawn() {
+    if (Math.random() < this.respawnProbability) { 
+      super.respawn();
+    } else {
+      this.position = { x: -1, y: -1 }; // hide the food
+      super.resetRespawn();
+    }
+  }
+}
+\end{lstlisting}
+
+
 
 
 
@@ -333,6 +401,8 @@ very pleasant thanks to sourcemaps. For new runtime features you can also use po
 
 
 \begin{thebibliography}{}
+\bibitem[Zakas, N. C. (2009)]{Wiley} Professional javascript for web developers. John Wiley \& Sons.
+
 \bibitem[Bofelli {\it et~al}., 2000]{Boffelli03} Bofelli,F., Name2, Name3 (2003) Article title, {\it Journal Name}, {\bf 199}, 133-154.
 
 \bibitem[Bag {\it et~al}., 2001]{Bag01} Bag,M., Name2, Name3 (2001) Article title, {\it Journal Name}, {\bf 99}, 33-54.
