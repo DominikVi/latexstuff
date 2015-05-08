@@ -1,6 +1,7 @@
 \documentclass{bioinfo}
 \copyrightyear{2015}
 \pubyear{2015}
+\usepackage{url}
 \usepackage{listings}
 \usepackage{color}
 \definecolor{lightgray}{rgb}{.9,.9,.9}
@@ -61,7 +62,7 @@ Almost every Web Developer has heard about this wide spread Language and came to
 As time passes by, the use of JavaScript in practice has shown it's benefits and weaknesses.
 That makes it important to stay up to date with the current and upcoming language standards for this very potent programming language.  
 In this article we're going to have a closer look at the upcoming JavaScript language standard which is ECMAScript Version 6.
-After giving some background information about ECMAScript the web app the authores developed for the Seminar "Javascripting Technology" follows. 
+After giving some background information about ECMAScript the web app the authors developed for the Seminar "Javascripting Technology" follows. 
 An architectural overview over the applicaton \textit{"ESnake6"} will be given before notable ECMAScript 6 language features will be presented
 and explained. 
 
@@ -70,7 +71,7 @@ and explained.
 \section{Introduction}
 \subsection{ECMAScript \& JavaScript}
 ECMAScript is the language specification for JavaScript, standartized by ECMA International. The corresponding standard is the ECMA-262 specification. 
-As ECMAScript is also standartized by the International Organization for Standardization (ISO) in collaboration with the International Electrotechnical Commission (IEC) a ISO/IEC 16262 exists.
+As ECMAScript is also standartized by the International Organization for Standardization (ISO) in collaboration with the International Electrotechnical Commission (IEC) a ISO/IEC 16262 specification exists.
 As JavaScript provides additional features than the ones specified in the ECMAScript language standard it can be considered as an ECMAScript variant. Another popular variant of ECMAScript is JScript.
 \subsubsection{ECMA International}
 ECMA International is a not-for-profit association in Geneva, Switzerland. 
@@ -96,23 +97,22 @@ Modern language features were added in ECMAScript Version 3. Some examples are r
 \subsubsection*{\textbf{ES5 - 2009}}
 After endless debates and discussion, the plan for breaking changes was temporarily freezed and reduced to the clarification of JavaScript ambiguities with the introduction of the strict mode. 
 \subsubsection*{\textbf{ES5.1 - 2011}}
-A second set of editorial changes in ECMAScript History were made to align it again with theISO/IEC standard 16262.
+A second set of editorial changes in ECMAScript History were made to align it again with the ISO/IEC standard 16262.
 \subsubsection*{\textbf{ES6 - 2015}}
 ECMAScript 6 (aka JS Harmony) is scheduled for june 2015. It will be the most extensive standard since ECMA Script Version 1 was released. Due to the fact, that ES6 just adds syntactical features on top of ESCMAScript 5.1 the backward compatibility is guaranteed. The changes made in ES6 also work as a foundation for the following features planned for ES7.
 \subsubsection*{\textbf{ES7 - (tbd)}}
-In May 2015 ECMAScript Version 7 is in a very early draft state, but already planned and includes among other things the features that were planned for ECMAScript 6 but
-din't make it into this standard before it reached the final draft state. 
+In May 2015 ECMAScript Version 7 is in a very early draft state, but already planned and includes among other things the features that were planned for ECMAScript 6, but din't make it into this standard before it reached the final draft state. 
 
 \subsection{Benefits of ECMAScript6}
 \subsubsection{Suitable for large code bases}
 The new ECMAScript Version 6 provides modules an classes which makes the prior used patterns (e.g. module pattern) obsolete
-and allows better encapsulation. Along with other new features this gives the possibility for clean easily readable code, 
+and allows better encapsulation. Along with other new features this gives the possibility for clean and easily readable code, 
 which makes ECMAScript6 a good choice for bigger projects.
 Thanks to the syntax improvements the boilerplate can be reduced which also leads to less lines of code,
 reduced maintenance effort and easier extensibility, if used properly.
-\subsubsection{Straight forward migration into existing code}
+\subsubsection{Straight forward migration of existing code}
 As ECMAScript 6 only adds features on top of ECMAScript 5.1 the migration in existing projects is very easy,
-because there's no nescessarity to rewrite existing code to make it fit the current standard.  
+because there's no necessity to rewrite existing code to make it fit the current standard.  
 
 \section{Web App}
 
@@ -129,7 +129,7 @@ popular snake game.
 \subsubsection{Build Process}
 To build ECMAScript 6 applications while the standard is still in a draft state, we used a ES6 to ES5 compiler.
 After writing the App the ECMAScript Version 6 source files will be translated into ECMAScript 5.1. while the 
-used HTML and CSS files as well as the included libraries will be copied. For this action a build step is nescessary. 
+used HTML and CSS files as well as the included libraries will be copied. For this action a build step is necessary. 
 After the translation into ECMAScript 5.1 the project can be run with RequireJS modules and Sourcemaps.
 %first translate in a build step
 %bild build process
@@ -148,22 +148,22 @@ This specific compiler accepts a flag which causes the compiler to translate mod
 \subsubsection{Application Architecture}
 The entry point for the application is in the index.html file, which uses RequireJS to load main.js. After setting up the game 
 loop using \textit{requestAnimationFrame} the game class gets instantiated which again instatiates the Grid, Snake and Food class,
-as well as FoodRandom. To give an example of Inheritation in ECMAScript 6 FoodRamdom inheritates from Food and appears randomly for
+as well as FoodRandom. To give an example of Inheritance in ECMAScript 6 FoodRandom inherits from Food and appears randomly for
 a short period of time.
 \begin{figure}[!tpb]%figure351
 \centerline{\includegraphics[scale=0.26]{apparch.jpg}}
 \caption{Applicatoin architecture}\label{fig:02}
 \end{figure}
 \subsubsection{Project Structure} 
-The app folder contains the nescessary HTML, CSS and JavaScript (ECMAScript6) code. The application entry point is the index.html file, wich loads main.js.
+The app folder contains the necessary HTML, CSS and JavaScript (ECMAScript6) code. The application entry point is the index.html file, wich loads main.js.
 
 \section{ECMA Script language features}
 
 \subsection{Language basics}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BIS HIER HIN OKAY
 \subsubsection{Const \& Let}
 A simple new and useful feature is the "const" keyword, which makes a variable to a constant, which means, 
-that it can only be assigned once. The assignement of a second value will fail silently but can be reognized by
+that it can only be assigned once. The assignment of a second value will fail silently, but can be reognized by
 Javascript linters. The usage is similar to the usage of var and constants can be defined anywhere a variable can be defined.
 The naming must differ from functions and names in the same scope. 
 \begin{lstlisting}[caption= My Javascript Example]
@@ -209,7 +209,7 @@ console.log(x); // => 5
 \subsubsection{Default, Spread and Rest parameters}
 Default parameters allow the programmer to predefine values for function parameters which will be automatically
 set if the function is called with less parameters than defined or if the parameters value is "'undefined"'.
-This feature makes it much easier to make sure function parameters got reasonable values without nescessarity to
+This feature makes it much easier to make sure function parameters got reasonable values without necessity to
 use if blocks to do so.
 
 \begin{lstlisting}[caption= My Javascript Example]
@@ -245,8 +245,8 @@ function testSpread(x, y, z) {
 
 \subsubsection{Template Strings}
 This feature is also often referred to as string interpolation.
-The concatenation of texts and variables especially over several lines with double quotes and plus signs was not only difficult to read but also inconvenient to write.  
-Both characteristics made dynamic strings to another source of bugs. In ECMAScript 6 template strings are opened and closed by back ticks and can contains placeholders which use the
+The concatenation of texts and variables especially over several lines with double quotes and plus signs was not only difficult to read, but also inconvenient to write.  
+Both characteristics made dynamic strings to another source of bugs. In ECMAScript 6 template strings are opened and closed by back ticks and can contain placeholders which use the
 \$\{\}, they also may go over several lines.
 
 \begin{lstlisting}[caption= My Javascript Example]
@@ -261,9 +261,9 @@ alert(this.name + “ collided with ” + player.name);
 
 An important benefit of Arrow functions is the improved scope of "this". In Line 9 of Listing 9 the this operator 
 contains the this value of the enclosing context. In this case the Snake class calls the "draw" function and so 
-the "this" in Line 8 of Listing 9 refers to the same context as Line 9. In EcmaScript 5 it would be nescessary to safe the
-value of "this" in another variable usually called "that" or "self". If the "this" scope wasn't considered correctly it's usage
-in context of nested functions was a big source for bugs. It has to be emphasised that the "this" scoping has only changed in the
+the "this" in Line 8 of Listing 9 refers to the same context as Line 9. In EcmaScript 5 it would be necessary to safe the
+value of "this" in another variable usually called "that" or "self". If the "this" scope wasn't considered correctly its usage
+in context of nested functions was a big source of bugs. It has to be emphasised that the "this" scoping has only changed in the
 context of arrow functions to maintain backward compatibility.
 
 \begin{lstlisting}[caption= My Javascript Example]
@@ -300,15 +300,15 @@ ivar obj = {
     [ "prop_" + (() => 42)() ]: 42
 };
 \end{lstlisting}
-
+%%%%%%
 \subsection{Code organization}
-A very important part of the new ECMAScript 6 standard is the enhanced code organization in modules and classes. As these structures are already known
-in ECMAScript 5.1 but require patterns to simulate them, which produces a lot of boilerplate, which makes it more difficult to organize bigger code bases
+A very important part of the new ECMAScript 6 standard is the enhanced code organization in modules and classes. These structures are already known
+in ECMAScript 5.1, but require patterns to simulate them, which produces a lot of boilerplate, which makes it more difficult to organize bigger code bases
 without the help of additional tools or libraries.
 \subsubsection{Modules (Import \& Export)}
 The Module System allows the import and export of functions, variables and whole modules itself. Syntactically "export" is used for exporting and "import... from"
 for importing. An example can be found in Listing 11 where the function "getRandomInt" in the file "utils.js" gets exported, and imported in "Grid.js".
-A native Module system makes the use of the "module pattern" obsolete which makes the use of modules again cleaner.
+A native Module system makes the use of the "module pattern" obsolete which makes the use of modules cleaner.
 
 \begin{lstlisting}[caption= My Javascript Example]
 // utils.js
@@ -401,7 +401,14 @@ very pleasant thanks to sourcemaps. For new runtime features you can also use po
 
 
 \begin{thebibliography}{}
-\bibitem[Zakas, N. C. (2009)]{Wiley} Professional javascript for web developers. John Wiley \& Sons.
+\bibitem[Zakas, N. C. (2009)]{Wiley00} 
+Zakas, N. C. (2009) Professional javascript for web developers. John Wiley \& Sons.
+
+\bibitem[Learn ES6]{ES00}
+Learn ES6 - Babel. (n.d.). Retrieved May 8, 2015, from 
+\url{https://babeljs.io/docs/learn-es6/}
+
+
 
 \bibitem[Bofelli {\it et~al}., 2000]{Boffelli03} Bofelli,F., Name2, Name3 (2003) Article title, {\it Journal Name}, {\bf 199}, 133-154.
 
