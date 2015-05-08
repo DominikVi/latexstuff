@@ -173,8 +173,10 @@ regard of block scope. Which means that the variable scope expires after leaving
 %TODO code example
 
 \subsubsection{Destructuring}
-Destructuring might remind of pattern matching known from several functional programming languages.
-The feature used on arrays allows the programmer to assign different kinds of values to specific array elements.
+Destructuring might remind of pattern matching known from several functional programming languages, which works with function arguments,
+arrays, also combined with objects and nested data structures.
+
+The feature used on arrays allows the programmer to assign different kinds of values to specific array elements in one step.
 \begin{lstlisting}[caption= My Javascript Example]
 // arrays
 var [a, b] = ["hello", 4];
@@ -198,7 +200,7 @@ var {userId: x} = {userId: 5};
 console.log(x); // => 5
 \end{lstlisting}
 
-\subsubsection{Default, Rest, Spread parameters}
+\subsubsection{Default, Spread and Rest parameters}
 Default parameters allow the programmer to predefine values for function parameters which will be automatically
 set if the function is called with less parameters than defined or if the parameters value is "'undefined"'.
 This feature makes it much easier to make sure function parameters got reasonable values without nescessarity to
@@ -214,7 +216,8 @@ const game = createGame(canvas, 40, 40); // sets cellsX and cellsY to 40, player
 \end{lstlisting}
 
 Rest parameters are indicated by  "..." followed by the parameter name. As you can see in the following 
-example the parameters of "testRest" that follow x get stored in an array called y.
+example the parameters of "testRest" that follow x get stored in an array called y. This makes it easier
+and cleaner to deal with functions without a specified number of parameters.
 
 \begin{lstlisting}[caption= My Javascript Example]
 // put the rest of all function arguments into an array
@@ -224,7 +227,8 @@ function testRest(x, ...y) {
   testRest(3, "hello", true) == 6
 \end{lstlisting}
 
-Spreading of parameters is also indicated by "..." followed by an array. 
+The spread feature is also indicated by "..." followed by an array passed to a function. It causes the array to be spread into single
+elements and assigned to the function parameters ordered by their appearance in the parameter list and by the array index (first array element gets assigned to the first parameter, the second one to the second parameter and so on).
 \begin{lstlisting}[caption= My Javascript Example]
 // turn array into argument list and call function
 function testSpread(x, y, z) {
@@ -234,6 +238,10 @@ function testSpread(x, y, z) {
 \end{lstlisting}
 
 \subsubsection{Template Strings}
+This feature is also often referred to as string interpolation.
+The concatenation of texts and variables especially over several lines with double quotes and plus signs was not only difficult to read but also inconvenient to write.  
+Both characteristics made dynamic strings to another source of bugs. In ECMAScript 6 template strings are opened and closed by back ticks and can contains placeholders which use the
+\$\{\}, they also may go over several lines.
 
 \begin{lstlisting}[caption= My Javascript Example]
 // classes/Snake.js
@@ -244,6 +252,13 @@ alert(this.name + “ collided with ” + player.name);
 \end{lstlisting}
 
 \subsubsection{Arrow Functions}
+
+An important benefit of Arrow functions is the improved scope of "this". In Line 9 of Listing 9 the this operator 
+contains the this value of the enclosing context. In this case the Snake class calls the "draw" function and so 
+the "this" in Line 8 of Listing 9 refers to the same context as Line 9. In EcmaScript 5 it would be nescessary to safe the
+value of "this" in another variable usually called "that" or "self". If the "this" scope wasn't considered correctly it's usage
+in context of nested functions was a big source for bugs. It has to be emphasised that the "this" scoping has only changed in the
+context of arrow functions to maintain backward compatibility.
 
 \begin{lstlisting}[caption= My Javascript Example]
 // Game.js
@@ -279,7 +294,16 @@ ivar obj = {
     [ "prop_" + (() => 42)() ]: 42
 };
 \end{lstlisting}
+
 \subsection{Code organization}
+A very important part of the new ECMAScript 6 standard is the enhanced code organization in modules and classes. As these structures are already known
+in ECMAScript 5.1 but require patterns to simulate them, which produces a lot of boilerplate, which makes it more difficult to organize bigger code bases
+without the help of additional tools or libraries.
+\subsubsection{Modules (Import \& Export)}
+%todo
+
+
+
 
 
 
@@ -296,10 +320,6 @@ ivar obj = {
 To use ECMAScript 6 today, you can use an ES6 to ES5 compiler e.g. Babel or Traceur. The development experience gets
 very pleasant thanks to sourcemaps. For new runtime features you can also use polyfills (e.g. core-js).
 
-\section*{Acknowledgement}
-Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-
-\paragraph{Funding\textcolon} Text Text Text Text Text Text  Text Text.
 
 %\bibliographystyle{natbib}
 %\bibliographystyle{achemnat}
